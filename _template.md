@@ -7,7 +7,7 @@ status: in-progress          # in-progress | demo-ready | needs-polish
 tags: []                     # e.g. [automation, ai-orchestration, meetings]
 stack: []                    # e.g. [Claude Code, Python, Recall.ai]
 effort: <rough build time>
-hero: ../assets/<project-slug>/hero.png
+hero: ../assets/<project-slug>/hero.svg
 repo: <local path or GitHub URL>
 demo_video: null
 ---
@@ -16,7 +16,7 @@ demo_video: null
 
 > <One-sentence pitch in plain language. No jargon. What it does and who it's for.>
 
-![hero](../assets/<project-slug>/hero.png)
+![hero](../assets/<project-slug>/hero.svg)
 
 ## The Problem
 <What was painful or manual before. Who it affected. Why it mattered.

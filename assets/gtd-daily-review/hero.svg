@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="GTD Daily Review (Telegram)">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#831843"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <g transform="translate(840,240)" stroke="#ffffff" stroke-opacity="0.35" stroke-width="4" fill="none" stroke-linecap="round"><line x1="0"   y1="100" x2="0"   y2="100"/><line x1="20"  y1="80"  x2="20"  y2="120"/><line x1="40"  y1="50"  x2="40"  y2="150"/><line x1="60"  y1="30"  x2="60"  y2="170"/><line x1="80"  y1="70"  x2="80"  y2="130"/><line x1="100" y1="40"  x2="100" y2="160"/><line x1="120" y1="60"  x2="120" y2="140"/><line x1="140" y1="20"  x2="140" y2="180"/><line x1="160" y1="70"  x2="160" y2="130"/><line x1="180" y1="45"  x2="180" y2="155"/><line x1="200" y1="90"  x2="200" y2="110"/><line x1="220" y1="60"  x2="220" y2="140"/><line x1="240" y1="30"  x2="240" y2="170"/><line x1="260" y1="85"  x2="260" y2="115"/></g>
+  <text x="80" y="100" font-family="monospace" font-size="15" fill="#ffffff" fill-opacity="0.72" letter-spacing="2">NEEDS-POLISH</text>
+  <text x="80" y="220" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="68" font-weight="800" fill="#ffffff">GTD Daily Review</text>
+  <text x="80" y="302" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="68" font-weight="800" fill="#ffffff">(Telegram)</text>
+  <text x="80" y="416" font-family="-apple-system, sans-serif" font-size="26" fill="#ffffff" fill-opacity="0.88">A Telegram bot that turns inbox processing into a</text>
+  <text x="80" y="454" font-family="-apple-system, sans-serif" font-size="26" fill="#ffffff" fill-opacity="0.88">tap-driven conversation. Every thought you send gets</text>
+  <text x="80" y="492" font-family="-apple-system, sans-serif" font-size="26" fill="#ffffff" fill-opacity="0.88">captured to your second brain, and `/daily` walks</text>
+  <text x="80" y="530" font-family="-apple-system, sans-serif" font-size="26" fill="#ffffff" fill-opacity="0.88">you through your GTD inbox one item at a time with</text>
+  <g transform="translate(80, 540)"><rect width="200" height="38" rx="19" fill="#ffffff" fill-opacity="0.18"/><text x="100.0" y="25" font-family="monospace" font-size="15" fill="#ffffff" text-anchor="middle">productivity</text></g>
+  <g transform="translate(292, 540)"><rect width="200" height="38" rx="19" fill="#ffffff" fill-opacity="0.18"/><text x="100.0" y="25" font-family="monospace" font-size="15" fill="#ffffff" text-anchor="middle">second-brain</text></g>
+  <g transform="translate(504, 540)"><rect width="74" height="38" rx="19" fill="#ffffff" fill-opacity="0.18"/><text x="37.0" y="25" font-family="monospace" font-size="15" fill="#ffffff" text-anchor="middle">gtd</text></g>
+  <g transform="translate(590, 540)"><rect width="144" height="38" rx="19" fill="#ffffff" fill-opacity="0.18"/><text x="72.0" y="25" font-family="monospace" font-size="15" fill="#ffffff" text-anchor="middle">telegram</text></g>
+  <g transform="translate(746, 540)"><rect width="172" height="38" rx="19" fill="#ffffff" fill-opacity="0.18"/><text x="86.0" y="25" font-family="monospace" font-size="15" fill="#ffffff" text-anchor="middle">automation</text></g>
+  <text x="1120" y="600" font-family="monospace" font-size="14" fill="#ffffff" fill-opacity="0.55" text-anchor="end">built with Claude Code</text>
+</svg>

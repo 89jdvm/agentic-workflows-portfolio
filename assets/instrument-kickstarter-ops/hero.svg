@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Instrument Kickstarter — Project Ops System">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#b45309"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <g transform="translate(840,220)" fill="#ffffff" fill-opacity="0.22"><rect x="20"  y="180" width="40" height="60"  rx="4"/><rect x="80"  y="120" width="40" height="120" rx="4"/><rect x="140" y="60"  width="40" height="180" rx="4"/><rect x="200" y="20"  width="40" height="220" rx="4"/><line x1="0" y1="260" x2="280" y2="260" stroke="#ffffff" stroke-opacity="0.5" stroke-width="2"/></g>
+  <text x="80" y="100" font-family="monospace" font-size="15" fill="#ffffff" fill-opacity="0.72" letter-spacing="2">IN-PROGRESS</text>
+  <text x="80" y="220" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="68" font-weight="800" fill="#ffffff">Instrument</text>
+  <text x="80" y="302" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="68" font-weight="800" fill="#ffffff">Kickstarter —</text>
+  <text x="80" y="416" font-family="-apple-system, sans-serif" font-size="26" fill="#ffffff" fill-opacity="0.88">A complete operational system for launching a</text>
+  <text x="80" y="454" font-family="-apple-system, sans-serif" font-size="26" fill="#ffffff" fill-opacity="0.88">handmade-instrument Kickstarter in 31 weeks.</text>
+  <text x="80" y="492" font-family="-apple-system, sans-serif" font-size="26" fill="#ffffff" fill-opacity="0.88">Milestones, gates, budget, email list, competitor</text>
+  <text x="80" y="530" font-family="-apple-system, sans-serif" font-size="26" fill="#ffffff" fill-opacity="0.88">research, and a live HTML dashboard — all driven by</text>
+  <g transform="translate(80, 540)"><rect width="284" height="38" rx="19" fill="#ffffff" fill-opacity="0.18"/><text x="142.0" y="25" font-family="monospace" font-size="15" fill="#ffffff" text-anchor="middle">project-management</text></g>
+  <g transform="translate(376, 540)"><rect width="186" height="38" rx="19" fill="#ffffff" fill-opacity="0.18"/><text x="93.0" y="25" font-family="monospace" font-size="15" fill="#ffffff" text-anchor="middle">kickstarter</text></g>
+  <g transform="translate(574, 540)"><rect width="186" height="38" rx="19" fill="#ffffff" fill-opacity="0.18"/><text x="93.0" y="25" font-family="monospace" font-size="15" fill="#ffffff" text-anchor="middle">client-work</text></g>
+  <g transform="translate(772, 540)"><rect width="158" height="38" rx="19" fill="#ffffff" fill-opacity="0.18"/><text x="79.0" y="25" font-family="monospace" font-size="15" fill="#ffffff" text-anchor="middle">dashboard</text></g>
+  <g transform="translate(942, 540)"><rect width="172" height="38" rx="19" fill="#ffffff" fill-opacity="0.18"/><text x="86.0" y="25" font-family="monospace" font-size="15" fill="#ffffff" text-anchor="middle">automation</text></g>
+  <text x="1120" y="600" font-family="monospace" font-size="14" fill="#ffffff" fill-opacity="0.55" text-anchor="end">built with Claude Code</text>
+</svg>

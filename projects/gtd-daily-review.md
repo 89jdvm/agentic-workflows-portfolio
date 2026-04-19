@@ -7,7 +7,7 @@ status: needs-polish
 tags: [productivity, second-brain, gtd, telegram, automation, voice]
 stack: [Supabase Edge Functions, Deno, TypeScript, Postgres, Telegram Bot API, Google Calendar, Groq Whisper, OpenRouter]
 effort: ~1 day
-hero: ../assets/gtd-daily-review/hero.png
+hero: ../assets/gtd-daily-review/hero.svg
 repo: /Users/jdlovesyou/Agentic Workflows/OB1
 demo_video: null
 ---
@@ -16,7 +16,7 @@ demo_video: null
 
 > A Telegram bot that turns inbox processing into a tap-driven conversation. Every thought you send gets captured to your second brain, and `/daily` walks you through your GTD inbox one item at a time with inline buttons.
 
-![hero](../assets/gtd-daily-review/hero.png)
+![hero](../assets/gtd-daily-review/hero.svg)
 
 ## The Problem
 

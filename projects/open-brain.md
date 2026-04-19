@@ -7,7 +7,7 @@ status: needs-polish
 tags: [second-brain, ai-orchestration, productivity, automation, integration]
 stack: [Supabase, pgvector, Deno, TypeScript, MCP Protocol, OpenRouter, Claude Code, Telegram]
 effort: ~2 weeks (ongoing)
-hero: ../assets/open-brain/hero.png
+hero: ../assets/open-brain/hero.svg
 repo: https://github.com/89jdvm/open-brain
 demo_video: null
 ---
@@ -16,7 +16,7 @@ demo_video: null
 
 > A personal AI memory that remembers everything you tell it, finds connections you'd miss, and keeps your to-do list in sync — accessible from any AI tool you use.
 
-![hero](../assets/open-brain/hero.png)
+![hero](../assets/open-brain/hero.svg)
 
 ## The Problem
 

@@ -7,7 +7,7 @@ status: needs-polish
 tags: [automation, ai-orchestration, scraping, productivity, workflow]
 stack: [Claude Code, Python, SQLite, Telegram Bot API, OpenRouter, Google Docs API, Supabase]
 effort: ~3 weeks
-hero: ../assets/jobmatch-ai/hero.png
+hero: ../assets/jobmatch-ai/hero.svg
 repo: https://github.com/89jdvm/job-search-automation
 demo_video: null
 ---
@@ -16,7 +16,7 @@ demo_video: null
 
 > An automated job-hunting pipeline that scrapes 15+ job boards every morning, scores each role against your profile, and sends the best matches to your phone — with one-tap approve to generate a tailored CV and application.
 
-![hero](../assets/jobmatch-ai/hero.png)
+![hero](../assets/jobmatch-ai/hero.svg)
 
 ## The Problem
 

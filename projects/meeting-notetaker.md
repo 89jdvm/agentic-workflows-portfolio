@@ -7,7 +7,7 @@ status: needs-polish
 tags: [automation, ai-orchestration, meetings, productivity, second-brain]
 stack: [Claude Code, Recall.ai, Telegram Bot API, Open Brain, Supabase, Next.js, Python, OpenRouter]
 effort: ~2 days
-hero: ../assets/meeting-notetaker/hero.png
+hero: ../assets/meeting-notetaker/hero.svg
 repo: ~/Agentic Workflows/Notetaker
 demo_video: null
 ---
@@ -16,7 +16,7 @@ demo_video: null
 
 > Automatically joins your video calls, turns every meeting into a clean summary with action items and highlights, and drops the tasks straight into your to-do list.
 
-![hero](../assets/meeting-notetaker/hero.png)
+![hero](../assets/meeting-notetaker/hero.svg)
 
 ## The Problem
 

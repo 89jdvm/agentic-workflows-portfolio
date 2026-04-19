@@ -7,7 +7,7 @@ status: needs-polish
 tags: [automation, ai-orchestration, second-brain, telegram, integration, productivity]
 stack: [Claude Code, Supabase Edge Functions, Deno, TypeScript, PostgreSQL, Telegram Bot API, Groq Whisper, OpenRouter]
 effort: ~3 days (4-phase rollout, completed 2026-04-16)
-hero: ../assets/unified-telegram-router/hero.png
+hero: ../assets/unified-telegram-router/hero.svg
 repo: /Users/jdlovesyou/Agentic Workflows/OB1
 demo_video: null
 ---
@@ -16,7 +16,7 @@ demo_video: null
 
 > One Telegram chat, three personal AI workflows, zero dependence on a laptop being open. The backbone that makes my second brain, job-search assistant, and meeting notetaker all reliably reachable from my phone.
 
-![hero](../assets/unified-telegram-router/hero.png)
+![hero](../assets/unified-telegram-router/hero.svg)
 
 ## The Problem
 
