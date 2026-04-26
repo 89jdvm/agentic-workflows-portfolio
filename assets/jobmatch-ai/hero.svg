@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="JobMatch AI">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0f766e"/>
-      <stop offset="100%" stop-color="#14b8a6"/>
+      <stop offset="0%" stop-color="#312e81"/>
+      <stop offset="100%" stop-color="#6366f1"/>
     </linearGradient>
     <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
       <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
@@ -10,17 +10,17 @@
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
   <rect width="1200" height="630" fill="url(#grid)"/>
-  <g transform="translate(850,210)" stroke="#ffffff" stroke-opacity="0.3" stroke-width="2" fill="#ffffff" fill-opacity="0.35"><line x1="140" y1="40"  x2="60"  y2="140" stroke-opacity="0.4"/><line x1="140" y1="40"  x2="220" y2="140" stroke-opacity="0.4"/><line x1="60"  y1="140" x2="140" y2="240" stroke-opacity="0.4"/><line x1="220" y1="140" x2="140" y2="240" stroke-opacity="0.4"/><line x1="60"  y1="140" x2="220" y2="140" stroke-opacity="0.4"/><circle cx="140" cy="40"  r="18"/><circle cx="60"  cy="140" r="18"/><circle cx="220" cy="140" r="18"/><circle cx="140" cy="240" r="22" fill-opacity="0.5"/></g>
-  <text x="80" y="100" font-family="monospace" font-size="15" fill="#ffffff" fill-opacity="0.72" letter-spacing="2">NEEDS-POLISH</text>
+  <g transform="translate(850,210)" fill="#ffffff" fill-opacity="0.22"><path d="M140,50 L160,50 L165,70 L180,75 L195,65 L210,80 L200,95 L205,110 L225,115 L225,135 L205,140 L200,155 L210,170 L195,185 L180,175 L165,180 L160,200 L140,200 L135,180 L120,175 L105,185 L90,170 L100,155 L95,140 L75,135 L75,115 L95,110 L100,95 L90,80 L105,65 L120,75 L135,70 Z"/><circle cx="150" cy="125" r="22" fill="#ffffff" fill-opacity="0.5"/></g>
+  <text x="80" y="100" font-family="monospace" font-size="15" fill="#ffffff" fill-opacity="0.72" letter-spacing="2">IN-PROGRESS</text>
   <text x="80" y="220" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="68" font-weight="800" fill="#ffffff">JobMatch AI</text>
-  <text x="80" y="334" font-family="-apple-system, sans-serif" font-size="26" fill="#ffffff" fill-opacity="0.88">An automated job-hunting pipeline that scrapes 15+</text>
-  <text x="80" y="372" font-family="-apple-system, sans-serif" font-size="26" fill="#ffffff" fill-opacity="0.88">job boards every morning, scores each role against</text>
-  <text x="80" y="410" font-family="-apple-system, sans-serif" font-size="26" fill="#ffffff" fill-opacity="0.88">your profile, and sends the best matches to your</text>
-  <text x="80" y="448" font-family="-apple-system, sans-serif" font-size="26" fill="#ffffff" fill-opacity="0.88">phone — with one-tap approve to generate a tailored</text>
-  <g transform="translate(80, 540)"><rect width="172" height="38" rx="19" fill="#ffffff" fill-opacity="0.18"/><text x="86.0" y="25" font-family="monospace" font-size="15" fill="#ffffff" text-anchor="middle">automation</text></g>
+  <text x="80" y="334" font-family="-apple-system, sans-serif" font-size="26" fill="#ffffff" fill-opacity="0.88">A fully automated job-hunting pipeline that scrapes</text>
+  <text x="80" y="372" font-family="-apple-system, sans-serif" font-size="26" fill="#ffffff" fill-opacity="0.88">25+ boards every morning, scores each role with a</text>
+  <text x="80" y="410" font-family="-apple-system, sans-serif" font-size="26" fill="#ffffff" fill-opacity="0.88">bespoke rubric, sends the best matches to your</text>
+  <text x="80" y="448" font-family="-apple-system, sans-serif" font-size="26" fill="#ffffff" fill-opacity="0.88">phone, and generates a tailored CV and application</text>
+  <g transform="translate(80, 540)"><rect width="172" height="38" rx="19" fill="#ffffff" fill-opacity="0.18"/><text x="86.0" y="25" font-family="monospace" font-size="15" fill="#ffffff" text-anchor="middle">job-search</text></g>
   <g transform="translate(264, 540)"><rect width="256" height="38" rx="19" fill="#ffffff" fill-opacity="0.18"/><text x="128.0" y="25" font-family="monospace" font-size="15" fill="#ffffff" text-anchor="middle">ai-orchestration</text></g>
-  <g transform="translate(532, 540)"><rect width="144" height="38" rx="19" fill="#ffffff" fill-opacity="0.18"/><text x="72.0" y="25" font-family="monospace" font-size="15" fill="#ffffff" text-anchor="middle">scraping</text></g>
-  <g transform="translate(688, 540)"><rect width="200" height="38" rx="19" fill="#ffffff" fill-opacity="0.18"/><text x="100.0" y="25" font-family="monospace" font-size="15" fill="#ffffff" text-anchor="middle">productivity</text></g>
-  <g transform="translate(900, 540)"><rect width="144" height="38" rx="19" fill="#ffffff" fill-opacity="0.18"/><text x="72.0" y="25" font-family="monospace" font-size="15" fill="#ffffff" text-anchor="middle">workflow</text></g>
+  <g transform="translate(532, 540)"><rect width="298" height="38" rx="19" fill="#ffffff" fill-opacity="0.18"/><text x="149.0" y="25" font-family="monospace" font-size="15" fill="#ffffff" text-anchor="middle">document-generation</text></g>
+  <g transform="translate(842, 540)"><rect width="200" height="38" rx="19" fill="#ffffff" fill-opacity="0.18"/><text x="100.0" y="25" font-family="monospace" font-size="15" fill="#ffffff" text-anchor="middle">telegram-bot</text></g>
+  <g transform="translate(1054, 540)"><rect width="172" height="38" rx="19" fill="#ffffff" fill-opacity="0.18"/><text x="86.0" y="25" font-family="monospace" font-size="15" fill="#ffffff" text-anchor="middle">automation</text></g>
   <text x="1120" y="600" font-family="monospace" font-size="14" fill="#ffffff" fill-opacity="0.55" text-anchor="end">built with Claude Code</text>
 </svg>
