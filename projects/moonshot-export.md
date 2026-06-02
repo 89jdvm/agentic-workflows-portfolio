@@ -1,5 +1,5 @@
 ---
-project: MOONSHOT — B2B Export Demand Engine
+project: MOONSHOT. B2B Export Demand Engine
 slug: moonshot-export
 date_built: 2026-02
 last_updated: 2026-04-16
@@ -43,14 +43,11 @@ On top of all that:
 
 ## Screenshots
 
-![Operational dashboard](../assets/moonshot-export/ops-dashboard.png)
-*Real-time Smartlead performance — warmup day, campaign-by-tier status, bounce/open/reply, spam-complaint thresholds with visual alerts.*
+<!-- broken image dropped at build time (PNG never created): ![Operational dashboard](../assets/moonshot-export/ops-dashboard.png) -->*Real-time Smartlead performance — warmup day, campaign-by-tier status, bounce/open/reply, spam-complaint thresholds with visual alerts.*
 
-![Signal scanner output](../assets/moonshot-export/signals.png)
-*50+ news feeds parsed daily. 14,453 intent signals logged. Existing leads auto-upgrade when intent is detected.*
+<!-- broken image dropped at build time (PNG never created): ![Signal scanner output](../assets/moonshot-export/signals.png) -->*50+ news feeds parsed daily. 14,453 intent signals logged. Existing leads auto-upgrade when intent is detected.*
 
-![Marketing website](../assets/moonshot-export/website.png)
-*React + Tailwind credibility site, referenced from every cold email.*
+<!-- broken image dropped at build time (PNG never created): ![Marketing website](../assets/moonshot-export/website.png) -->*React + Tailwind credibility site, referenced from every cold email.*
 
 ## Result
 - **End-to-end B2B export operation** running as code. From cold prospect to sample shipment in a single system.

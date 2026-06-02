@@ -1,5 +1,5 @@
 ---
-project: Skool Video Tool — AI-Ready Transcripts
+project: Skool Video Tool. AI-Ready Transcripts
 slug: skool-video-tool
 date_built: 2026-03
 last_updated: 2026-04-16
@@ -37,11 +37,9 @@ All transcription happens locally via **whisper-cpp** running on CPU against the
 
 ## Screenshots
 
-![Recording UI](../assets/skool-video-tool/recording.png)
-*Red record button, live waveform, timer, "Also share tab audio" reminder in red when silent. Browser-based, no install step beyond `npm start`.*
+<!-- broken image dropped at build time (PNG never created): ![Recording UI](../assets/skool-video-tool/recording.png) -->*Red record button, live waveform, timer, "Also share tab audio" reminder in red when silent. Browser-based, no install step beyond `npm start`.*
 
-![Structured markdown output](../assets/skool-video-tool/markdown.png)
-*YAML frontmatter + auto-sectioned transcript + paragraph chunking. Ready to hand to Claude as context.*
+<!-- broken image dropped at build time (PNG never created): ![Structured markdown output](../assets/skool-video-tool/markdown.png) -->*YAML frontmatter + auto-sectioned transcript + paragraph chunking. Ready to hand to Claude as context.*
 
 ## Result
 - **Local-first transcription** with zero API cost and zero data leakage.

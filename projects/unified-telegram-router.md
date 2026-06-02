@@ -40,11 +40,9 @@ My laptop never has to be on. My Claude Code plugin for Telegram is retired. The
 
 ## Screenshots
 
-![Phase 1a test flow on Telegram](../assets/unified-telegram-router/test-flow.png)
-*Quick test flow after deployment: `task:` adds to inbox, `done:` marks it complete, plain text captures with auto-extracted action items, voice notes transcribe and capture. All running with my laptop closed.*
+<!-- broken image dropped at build time (PNG never created): ![Phase 1a test flow on Telegram](../assets/unified-telegram-router/test-flow.png) -->*Quick test flow after deployment: `task:` adds to inbox, `done:` marks it complete, plain text captures with auto-extracted action items, voice notes transcribe and capture. All running with my laptop closed.*
 
-![Router status audit](../assets/unified-telegram-router/status-router.png)
-*`/status router` lets me check the last 24 hours of activity — what commands ran, any errors, all from my phone.*
+<!-- broken image dropped at build time (PNG never created): ![Router status audit](../assets/unified-telegram-router/status-router.png) -->*`/status router` lets me check the last 24 hours of activity — what commands ran, any errors, all from my phone.*
 
 ## Result
 

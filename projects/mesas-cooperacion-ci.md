@@ -1,5 +1,5 @@
 ---
-project: Mesas de Cooperación — Conservación Internacional
+project: Mesas de Cooperación. Conservación Internacional
 slug: mesas-cooperacion-ci
 date_built: 2026-03
 last_updated: 2026-04-16
@@ -37,11 +37,9 @@ The bigger shift is methodological: **my consultancy is now a repository**, not 
 
 ## Screenshots
 
-![Dashboard for Hoja de Ruta](../assets/mesas-cooperacion-ci/dashboard.png)
-*Interactive dashboard for the 2026–2028 roadmap of one of the provinces — each action has an owner, a due date, and a status, and members of the Mesa can log in to track their part.*
+<!-- broken image dropped at build time (PNG never created): ![Dashboard for Hoja de Ruta](../assets/mesas-cooperacion-ci/dashboard.png) -->*Interactive dashboard for the 2026–2028 roadmap of one of the provinces — each action has an owner, a due date, and a status, and members of the Mesa can log in to track their part.*
 
-![Feedback plan](../assets/mesas-cooperacion-ci/feedback-plan.png)
-*Client feedback parsed out of `word/comments.xml` and turned into a 14-action, 5-phase implementation plan.*
+<!-- broken image dropped at build time (PNG never created): ![Feedback plan](../assets/mesas-cooperacion-ci/feedback-plan.png) -->*Client feedback parsed out of `word/comments.xml` and turned into a 14-action, 5-phase implementation plan.*
 
 ## Result
 - **Entregable 5** (Final Consolidated Report, 7 sections + annexes) produced inside Claude Code with full formatting preserved.

@@ -1,5 +1,5 @@
 ---
-project: Instrument Kickstarter — Project Ops System
+project: Instrument Kickstarter. Project Ops System
 slug: instrument-kickstarter-ops
 date_built: 2026-04
 last_updated: 2026-04-16
@@ -37,11 +37,9 @@ What the system does:
 
 ## Screenshots
 
-![Interactive dashboard](../assets/instrument-kickstarter-ops/dashboard.png)
-*The dashboard — health score, critical path, gate readiness, risk register, budget. Opens in the browser from a single `render_dashboard.py` call.*
+<!-- broken image dropped at build time (PNG never created): ![Interactive dashboard](../assets/instrument-kickstarter-ops/dashboard.png) -->*The dashboard — health score, critical path, gate readiness, risk register, budget. Opens in the browser from a single `render_dashboard.py` call.*
 
-![Competitor research report](../assets/instrument-kickstarter-ops/ks-research.png)
-*10 handmade-instrument Kickstarter campaigns analyzed — pledged amounts, tier structures, Early Bird patterns, success/failure mix. Used to lock pricing and tier design.*
+<!-- broken image dropped at build time (PNG never created): ![Competitor research report](../assets/instrument-kickstarter-ops/ks-research.png) -->*10 handmade-instrument Kickstarter campaigns analyzed — pledged amounts, tier structures, Early Bird patterns, success/failure mix. Used to lock pricing and tier design.*
 
 ## Result
 - **One context file → every artifact.** Update the meeting notes, rerun the tools, the dashboard, Google Sheet, and email list all reflect the new state.

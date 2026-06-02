@@ -35,11 +35,9 @@ Per-interview cost: about **$1** (Whisper ≈$0.27 + ~10 Claude responses ≈$0.
 
 ## Screenshots
 
-![Floating window on top of Zoom](../assets/interview-copilot/floating-ui.png)
-*The window stays above the Zoom call — dual-pane with live transcript on top and AI response on the bottom.*
+<!-- broken image dropped at build time (PNG never created): ![Floating window on top of Zoom](../assets/interview-copilot/floating-ui.png) -->*The window stays above the Zoom call — dual-pane with live transcript on top and AI response on the bottom.*
 
-![Generated response](../assets/interview-copilot/response.png)
-*50-word structured answer on demand — opening, key points, closing. Read it, adapt in your own words, don't parrot.*
+<!-- broken image dropped at build time (PNG never created): ![Generated response](../assets/interview-copilot/response.png) -->*50-word structured answer on demand — opening, key points, closing. Read it, adapt in your own words, don't parrot.*
 
 ## Result
 - **Real-time transcription + on-demand coaching** during live calls, all for ~$1 per interview.

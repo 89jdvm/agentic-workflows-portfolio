@@ -52,11 +52,9 @@ When I type `approve 75831` on my phone:
 
 ## Screenshots
 
-![Telegram alert](../assets/jobmatch-ai/telegram-alert.png)
-*Daily digest on Telegram: score, org, deadline countdown, action plan — all decided before I see it.*
+<!-- broken image dropped at build time (PNG never created): ![Telegram alert](../assets/jobmatch-ai/telegram-alert.png) -->*Daily digest on Telegram: score, org, deadline countdown, action plan — all decided before I see it.*
 
-![Dashboard](../assets/jobmatch-ai/dashboard.png)
-*Pipeline dashboard: score distribution, approval funnel, source ROI.*
+<!-- broken image dropped at build time (PNG never created): ![Dashboard](../assets/jobmatch-ai/dashboard.png) -->*Pipeline dashboard: score distribution, approval funnel, source ROI.*
 
 ## Result
 

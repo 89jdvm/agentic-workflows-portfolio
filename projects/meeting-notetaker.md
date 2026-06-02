@@ -40,14 +40,11 @@ Meeting Notetaker runs in the background and handles the whole lifecycle:
 
 ## Screenshots
 
-![Dashboard overview](../assets/meeting-notetaker/dashboard.png)
-*The dashboard index — every processed meeting, one click to the detail view.*
+<!-- broken image dropped at build time (PNG never created): ![Dashboard overview](../assets/meeting-notetaker/dashboard.png) -->*The dashboard index — every processed meeting, one click to the detail view.*
 
-![Action items aggregate](../assets/meeting-notetaker/action-items.png)
-*Cross-meeting action items, grouped by owner. This is the view I actually check every morning.*
+<!-- broken image dropped at build time (PNG never created): ![Action items aggregate](../assets/meeting-notetaker/action-items.png) -->*Cross-meeting action items, grouped by owner. This is the view I actually check every morning.*
 
-![Detail view](../assets/meeting-notetaker/detail.png)
-*Per-meeting tabs: transcript, action items, highlights, meta.*
+<!-- broken image dropped at build time (PNG never created): ![Detail view](../assets/meeting-notetaker/detail.png) -->*Per-meeting tabs: transcript, action items, highlights, meta.*
 
 ## Result
 

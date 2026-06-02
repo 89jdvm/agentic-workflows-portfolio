@@ -1,5 +1,5 @@
 ---
-project: Consultant Launch System — Personal Brand & LinkedIn Thought Leadership
+project: Consultant Launch System. Personal Brand & LinkedIn Thought Leadership
 slug: consultant-launch-system
 date_built: 2026-04
 last_updated: 2026-04-16
@@ -36,11 +36,9 @@ A folder in Claude Code that functions as the control room for my consulting lau
 
 ## Screenshots
 
-![Brand guide rules](../assets/consultant-launch-system/brand-guide.png)
-*Voice encoded as rules, not prose — so every AI tool drafting a post enforces specificity and bans AI slop automatically.*
+<!-- broken image dropped at build time (PNG never created): ![Brand guide rules](../assets/consultant-launch-system/brand-guide.png) -->*Voice encoded as rules, not prose — so every AI tool drafting a post enforces specificity and bans AI slop automatically.*
 
-![Resource hub](../assets/consultant-launch-system/resource-hub.png)
-*10 free interactive tools on GitHub Pages. Fillable forms, live scoring, localStorage auto-save, mobile-first.*
+<!-- broken image dropped at build time (PNG never created): ![Resource hub](../assets/consultant-launch-system/resource-hub.png) -->*10 free interactive tools on GitHub Pages. Fillable forms, live scoring, localStorage auto-save, mobile-first.*
 
 ## Result
 - **One defensible positioning** ("Practitioner-Scholar") validated against market research instead of invented.

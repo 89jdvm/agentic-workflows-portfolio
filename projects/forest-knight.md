@@ -28,11 +28,9 @@ The game runs in the browser, works on a phone with touch controls, and is entir
 
 ## Screenshots
 
-![Level 1 — Pradera Encantada](../assets/forest-knight/level-1.png)
-*Level 1: Pradera Encantada. First boss is the Poop Knight.*
+<!-- broken image dropped at build time (PNG never created): ![Level 1 — Pradera Encantada](../assets/forest-knight/level-1.png) -->*Level 1: Pradera Encantada. First boss is the Poop Knight.*
 
-![Mobile touch controls](../assets/forest-knight/mobile.png)
-*Joystick on the left, attack button on the right — designed for a kid's thumbs on a phone.*
+<!-- broken image dropped at build time (PNG never created): ![Mobile touch controls](../assets/forest-knight/mobile.png) -->*Joystick on the left, attack button on the right — designed for a kid's thumbs on a phone.*
 
 ## Result
 - A playable side-scrolling game with multiple levels (Pradera Encantada, Bosque Misterioso, Valle del Dragón…) and original bosses invented by a 4-year-old.

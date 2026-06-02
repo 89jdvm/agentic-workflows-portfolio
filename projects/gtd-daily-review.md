@@ -55,14 +55,11 @@ When the last item is done, the bot sends a summary: today's calendar, do-now ta
 
 ## Screenshots
 
-![Inbox card with decision buttons](../assets/gtd-daily-review/inbox-card.png)
-*Each inbox item appears as a single message with decision buttons. Tap one and the card updates in place.*
+<!-- broken image dropped at build time (PNG never created): ![Inbox card with decision buttons](../assets/gtd-daily-review/inbox-card.png) -->*Each inbox item appears as a single message with decision buttons. Tap one and the card updates in place.*
 
-![Next action sub-flow](../assets/gtd-daily-review/next-subflow.png)
-*"Next" opens a sub-flow: context → priority → due date. Four taps total.*
+<!-- broken image dropped at build time (PNG never created): ![Next action sub-flow](../assets/gtd-daily-review/next-subflow.png) -->*"Next" opens a sub-flow: context → priority → due date. Four taps total.*
 
-![End-of-review summary](../assets/gtd-daily-review/summary.png)
-*After the last item, the bot renders today's calendar, do-now tasks, overdue, and stale waiting-for.*
+<!-- broken image dropped at build time (PNG never created): ![End-of-review summary](../assets/gtd-daily-review/summary.png) -->*After the last item, the bot renders today's calendar, do-now tasks, overdue, and stale waiting-for.*
 
 ## Result
 
