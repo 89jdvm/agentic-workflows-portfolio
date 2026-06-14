@@ -11,12 +11,11 @@
   <rect width="1200" height="630" fill="url(#bg)"/>
   <rect width="1200" height="630" fill="url(#grid)"/>
   <g transform="translate(850,210)" stroke="#ffffff" stroke-opacity="0.3" stroke-width="2" fill="#ffffff" fill-opacity="0.35"><line x1="140" y1="40"  x2="60"  y2="140" stroke-opacity="0.4"/><line x1="140" y1="40"  x2="220" y2="140" stroke-opacity="0.4"/><line x1="60"  y1="140" x2="140" y2="240" stroke-opacity="0.4"/><line x1="220" y1="140" x2="140" y2="240" stroke-opacity="0.4"/><line x1="60"  y1="140" x2="220" y2="140" stroke-opacity="0.4"/><circle cx="140" cy="40"  r="18"/><circle cx="60"  cy="140" r="18"/><circle cx="220" cy="140" r="18"/><circle cx="140" cy="240" r="22" fill-opacity="0.5"/></g>
-  <text x="80" y="100" font-family="monospace" font-size="15" fill="#ffffff" fill-opacity="0.72" letter-spacing="2">NEEDS-POLISH</text>
+  <text x="80" y="100" font-family="monospace" font-size="15" fill="#ffffff" fill-opacity="0.72" letter-spacing="2">DEMO-READY</text>
   <text x="80" y="220" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="68" font-weight="800" fill="#ffffff">Open Brain</text>
-  <text x="80" y="334" font-family="-apple-system, sans-serif" font-size="26" fill="#ffffff" fill-opacity="0.88">A personal AI memory that remembers everything you</text>
-  <text x="80" y="372" font-family="-apple-system, sans-serif" font-size="26" fill="#ffffff" fill-opacity="0.88">tell it, finds connections you'd miss, and keeps</text>
-  <text x="80" y="410" font-family="-apple-system, sans-serif" font-size="26" fill="#ffffff" fill-opacity="0.88">your to-do list in sync — accessible from any AI</text>
-  <text x="80" y="448" font-family="-apple-system, sans-serif" font-size="26" fill="#ffffff" fill-opacity="0.88">tool you use.</text>
+  <text x="80" y="334" font-family="-apple-system, sans-serif" font-size="26" fill="#ffffff" fill-opacity="0.88">A personal AI memory that listens, remembers,</text>
+  <text x="80" y="372" font-family="-apple-system, sans-serif" font-size="26" fill="#ffffff" fill-opacity="0.88">classifies your tasks, and books them on your</text>
+  <text x="80" y="410" font-family="-apple-system, sans-serif" font-size="26" fill="#ffffff" fill-opacity="0.88">calendar — all from a Telegram voice note.</text>
   <g transform="translate(80, 540)"><rect width="200" height="38" rx="19" fill="#ffffff" fill-opacity="0.18"/><text x="100.0" y="25" font-family="monospace" font-size="15" fill="#ffffff" text-anchor="middle">second-brain</text></g>
   <g transform="translate(292, 540)"><rect width="256" height="38" rx="19" fill="#ffffff" fill-opacity="0.18"/><text x="128.0" y="25" font-family="monospace" font-size="15" fill="#ffffff" text-anchor="middle">ai-orchestration</text></g>
   <g transform="translate(560, 540)"><rect width="200" height="38" rx="19" fill="#ffffff" fill-opacity="0.18"/><text x="100.0" y="25" font-family="monospace" font-size="15" fill="#ffffff" text-anchor="middle">productivity</text></g>

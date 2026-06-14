@@ -3,7 +3,7 @@ project: JobMatch AI
 slug: jobmatch-ai
 date_built: 2026-02
 last_updated: 2026-04-26
-status: in-progress
+status: demo-ready
 tags: [job-search, ai-orchestration, document-generation, telegram-bot, automation]
 stack: [Python, SQLite, Anthropic API, Telegram Bot API, Supabase, Google APIs, Playwright, python-docx, pikepdf]
 effort: ~1 month (ongoing)
@@ -20,39 +20,39 @@ demo_video: null
 
 ## The Problem
 
-Job hunting in international development and conservation means checking 25+ fragmented sources daily — UN Careers, ReliefWeb, ImpactPool, ClimateBASE, procurement feeds, conservation boards, direct org sites. Each has its own interface and alert system. A good role might appear on four boards, or only one obscure one.
+Job hunting in international development and conservation means checking 25+ fragmented sources daily: UN Careers, ReliefWeb, ImpactPool, ClimateBASE, procurement feeds, conservation boards, direct org sites. Each has its own interface and alert system. A good role might appear on four boards, or only one obscure one.
 
 What I was doing before: 2–3 hours every morning scanning boards, reading descriptions, deciding what was worth pursuing. Then another 1–2 hours per application tailoring a CV. The noise was crushing, the hit rate was low, and I still missed things.
 
 ## The Solution
 
-JobMatch AI runs a two-phase automated pipeline — Phase 1 every morning at 5am without touching the laptop, Phase 2 on-demand the moment I approve a job from my phone.
+JobMatch AI runs a two-phase automated pipeline: Phase 1 every morning at 5am without touching the laptop, Phase 2 on-demand the moment I approve a job from my phone.
 
-### Phase 1 — Discovery (runs while I sleep)
+### Phase 1: Discovery (runs while I sleep)
 
 1. **Scrape.** 25+ specialized scrapers pull new listings from UN Careers, ReliefWeb, UNDP, ImpactPool, ClimateBASE, Conservation Job Board, DevNetJobs, UNGM procurement, Idealist, GlobeSmart, target org sites (25 dream employers monitored directly), LinkedIn email alerts, and more.
 2. **Deduplicate.** Cross-source dedup catches the same role posted on multiple boards, so I never see it twice.
-3. **Pre-filter.** Hard rules drop obvious mismatches before the expensive scoring step — wrong seniority, wrong geography, salary floor violations.
+3. **Pre-filter.** Hard rules drop obvious mismatches before the expensive scoring step: wrong seniority, wrong geography, salary floor violations.
 4. **Score.** Two-stage AI: Haiku batches all surviving jobs (0–100 rubric with prompt caching for ~$0.65/month), then Sonnet re-scores the borderline range (45–72) where the rough model's confidence is lowest. Final score = HOT (85+), WARM (60–84), COLD, or SKIP.
-5. **Route.** Deterministic logic assigns an action plan: `INSPIRA_PDF` (UN jobs), `EMAIL_FULL`, `EMAIL_CV_ONLY`, `PORTAL_UPLOAD`, or `MANUAL_REVIEW`. Zero AI in this step — rules based on org type and application requirements extracted during scoring.
+5. **Route.** Deterministic logic assigns an action plan: `INSPIRA_PDF` (UN jobs), `EMAIL_FULL`, `EMAIL_CV_ONLY`, `PORTAL_UPLOAD`, or `MANUAL_REVIEW`. Zero AI in this step: rules based on org type and application requirements extracted during scoring.
 6. **Notify.** Telegram HOT alert immediately for ≥85 scores. Daily digest at 8am with all WARM jobs, each with deadline countdown and the action plan already decided.
 
-### Phase 2 — Application (on-demand, triggered by one Telegram command)
+### Phase 2: Application (on-demand, triggered by one Telegram command)
 
 When I type `approve 75831` on my phone:
 
 1. Scrapes the organization's context (website, about page) for CV personalization.
-2. Generates a tailored CV in JSON using Sonnet — mirrors exact JD vocabulary, includes a gap acknowledgment if I'm missing a stated requirement (e.g., "I hold a BSc in Engineering, not an MSc in IR, but I've led governance tables across 3 Amazonian provinces…"), bold-highlights ATS keywords.
+2. Generates a tailored CV in JSON using Sonnet: mirrors exact JD vocabulary, includes a gap acknowledgment if I'm missing a stated requirement (e.g., "I hold a BSc in Engineering, not an MSc in IR, but I've led governance tables across 3 Amazonian provinces…"), bold-highlights ATS keywords.
 3. Assembles DOCX via template engine.
-4. Runs Haiku hallucination check — cross-references every metric and credential in the CV against my profile. If it invented something, flags it for review instead of staging.
-5. For UN Inspira jobs: generates an offline PDF template + a pre-filled cheatsheet (salary history, supervisor contacts, education dates, languages, publications, certifications) — turns a 3-hour Inspira form-filling session into 20 minutes.
+4. Runs Haiku hallucination check: cross-references every metric and credential in the CV against my profile. If it invented something, flags it for review instead of staging.
+5. For UN Inspira jobs: generates an offline PDF template + a pre-filled cheatsheet (salary history, supervisor contacts, education dates, languages, publications, certifications): turns a 3-hour Inspira form-filling session into 20 minutes.
 6. Creates a Gmail draft ready to send (for email-apply jobs).
 7. Creates a GTD next-action task + schedules a 60-minute calendar block automatically, computed from the job's deadline.
 8. Sends me a Telegram confirmation with file paths and the next step.
 
 ## Screenshots
 
-<!-- broken image dropped at build time (PNG never created): ![Telegram alert](../assets/jobmatch-ai/telegram-alert.png) -->*Daily digest on Telegram: score, org, deadline countdown, action plan — all decided before I see it.*
+<!-- broken image dropped at build time (PNG never created): ![Telegram alert](../assets/jobmatch-ai/telegram-alert.png) -->*Daily digest on Telegram: score, org, deadline countdown, action plan, all decided before I see it.*
 
 <!-- broken image dropped at build time (PNG never created): ![Dashboard](../assets/jobmatch-ai/dashboard.png) -->*Pipeline dashboard: score distribution, approval funnel, source ROI.*
 
@@ -69,9 +69,9 @@ When I type `approve 75831` on my phone:
 
 **Two-stage AI scoring instead of one model.** Haiku is fast and cheap but imprecise near the threshold. Running Sonnet only on the 45–72 range (borderline jobs) gets precision where it matters without burning money on clear SKIPs. Cost delta: ~$0.05/month more than Haiku-only, negligible accuracy improvement on obvious HOT/COLD, meaningful on the fence-sitters.
 
-**Bridge multiplier for cross-domain candidates.** My profile spans governance architecture, bioeconomy, trade policy, and sustainability consulting — rare combinations. The rubric adds +5–12 points when a job touches 2+ of my expertise clusters. Without this, many of the most relevant roles (e.g., "Trade & Climate Policy Advisor") score mid-range because no single dimension fully fires.
+**Bridge multiplier for cross-domain candidates.** My profile spans governance architecture, bioeconomy, trade policy, and sustainability consulting, rare combinations. The rubric adds +5–12 points when a job touches 2+ of my expertise clusters. Without this, many of the most relevant roles (e.g., "Trade & Climate Policy Advisor") score mid-range because no single dimension fully fires.
 
-**Gap acknowledgment in CV generation.** Most tailored CV systems pretend the candidate has everything required. This one acknowledges gaps upfront, then pivots to compensating evidence. Counterintuitively, this increases credibility — especially for UN/INGO hiring managers who read hundreds of CVs that claim perfect fits.
+**Gap acknowledgment in CV generation.** Most tailored CV systems pretend the candidate has everything required. This one acknowledges gaps upfront, then pivots to compensating evidence. Counterintuitively, this increases credibility, especially for UN/INGO hiring managers who read hundreds of CVs that claim perfect fits.
 
 **Deterministic action plan routing (zero AI).** After scoring, routing to INSPIRA_PDF vs. EMAIL_FULL vs. PORTAL_UPLOAD uses hard rules, not AI inference. The AI scores relevance; the rules handle logistics. Keeps the routing fast, auditable, and free of hallucinated instructions.
 
@@ -91,20 +91,20 @@ Source ROI is tracked per scraper: hit rate, skip rate, tokens burned. Dead scra
 
 ## How to Demo It
 
-1. Open Telegram — show the morning digest with scored jobs, deadline countdowns, and action plans pre-decided.
+1. Open Telegram, show the morning digest with scored jobs, deadline countdowns, and action plans pre-decided.
 2. Pick a HOT job, type `approve <id>`. Show the immediate "Generating..." confirmation.
-3. 2 minutes later: show the generated CV DOCX — point out the gap acknowledgment, the keyword bolding, the tailored bullets.
-4. For a UN job: show the Inspira cheatsheet — 30+ fields pre-answered, saving ~2.5 hours of form hunting.
+3. 2 minutes later: show the generated CV DOCX, point out the gap acknowledgment, the keyword bolding, the tailored bullets.
+4. For a UN job: show the Inspira cheatsheet, 30+ fields pre-answered, saving ~2.5 hours of form hunting.
 5. Show the SQLite dashboard: source ROI table (which boards produce HOT jobs, which waste tokens), score distribution histogram.
 6. Show `jobmatch status` on Telegram for a real-time funnel summary.
 
 ## Limitations & Setup
 
-- Scrapers break when job boards change their HTML. Expect 1–2 needing fixes per month — the source ROI tracker surfaces dead ones quickly.
+- Scrapers break when job boards change their HTML. Expect 1–2 needing fixes per month. The source ROI tracker surfaces dead ones quickly.
 - CV generation costs ~$0.10–0.20 per CV (Sonnet). Not free, but far cheaper than the time saved.
 - Pipeline runs locally on the Mac via launchd. Laptop needs to be awake at 5am (or triggered manually later).
 - Single-user system. The scoring rubric and gap acknowledgment are tuned to one person's career profile.
-- LinkedIn scraper depends on email alert forwarding rather than the API — requires periodic Gmail OAuth refresh.
+- LinkedIn scraper depends on email alert forwarding rather than the API, requires periodic Gmail OAuth refresh.
 - Gmail draft staging and apply_inspira.py Playwright automation require the laptop display to be accessible (not headless-only).
 
 ## Demo Pitch

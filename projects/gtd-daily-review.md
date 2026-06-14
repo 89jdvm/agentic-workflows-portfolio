@@ -20,7 +20,7 @@ demo_video: null
 
 ## The Problem
 
-I had 50+ captured thoughts piling up in my GTD inbox — voice notes, messages, emails, random ideas from the day. Processing them meant sitting at a computer, context-switching away from whatever I was actually doing, and working through each one in a text conversation. A 30-item inbox turned into a 90-minute ordeal. I kept avoiding it, the inbox kept growing, and important next actions got lost in the noise.
+I had 50+ captured thoughts piling up in my GTD inbox: voice notes, messages, emails, random ideas from the day. Processing them meant sitting at a computer, context-switching away from whatever I was actually doing, and working through each one in a text conversation. A 30-item inbox turned into a 90-minute ordeal. I kept avoiding it, the inbox kept growing, and important next actions got lost in the noise.
 
 The GTD method says the clarify-to-zero step should be fast and reflexive. It wasn't.
 
@@ -71,9 +71,9 @@ When the last item is done, the bot sends a summary: today's calendar, do-now ta
 ## Key Decisions
 
 - **Stateless bot, stateful database.** Every button tap is a fresh HTTP request. All review state lives in a `gtd_review_sessions` table; the function reads it, acts, writes it back. Sessions carry a short-id prefix in every callback payload so stale buttons from a restarted session fail loud instead of silently corrupting state.
-- **Edit cards in place.** When you tap a button, the card updates rather than sending a new message. The chat stays clean even after 50 taps. Edits that fail (message deleted, too old) fall back to a new message — no dead ends.
+- **Edit cards in place.** When you tap a button, the card updates rather than sending a new message. The chat stays clean even after 50 taps. Edits that fail (message deleted, too old) fall back to a new message, no dead ends.
 - **Voice notes during pending prompts.** If the bot asks "waiting on who?" and you reply with a voice note instead of typing, it transcribes the voice and uses the transcript as the delegate name. Mobile-first reality.
-- **Webhook test harness over unit tests.** This is an integration on top of Supabase, Telegram, and Postgres — the interesting bugs are wire-protocol bugs. So the test suite POSTs real webhook payloads to the deployed function and queries the database to verify state transitions. Runs in <30 seconds.
+- **Webhook test harness over unit tests.** This is an integration on top of Supabase, Telegram, and Postgres: the interesting bugs are wire-protocol bugs. So the test suite POSTs real webhook payloads to the deployed function and queries the database to verify state transitions. Runs in <30 seconds.
 - **Deliberate 30-min session timeout.** Long enough to get interrupted and come back. Short enough that a tap from yesterday's half-finished session fails safely.
 
 ## Under the Hood
@@ -91,8 +91,8 @@ Two helper Edge Functions support it: `gtd_task_context` (pulls the source thoug
 ## How to Demo It
 
 1. "Open your phone. Here's my Telegram bot."
-2. "Watch what happens when I send a voice note." *(dictate a thought with a few action items)* — bot replies in a few seconds: "Captured as task — 3 task(s) added to GTD inbox."
-3. "Now watch this." *(send `/daily`)* — bot shows: "📥 Inbox 1/N" + title + buttons.
+2. "Watch what happens when I send a voice note." *(dictate a thought with a few action items)*, bot replies in a few seconds: "Captured as task, 3 task(s) added to GTD inbox."
+3. "Now watch this." *(send `/daily`)*, bot shows: "📥 Inbox 1/N" + title + buttons.
 4. Tap through 3-4 items: one Done, one Next → @computer → high → tomorrow, one Wait → reply "Sarah".
 5. When the review finishes, the summary message appears with today's calendar and overdue list.
 6. "90 minutes → 4 minutes. Works from the lock screen. Never misses a capture."
@@ -105,10 +105,10 @@ Needs:
 - Supabase project with secrets set: `TELEGRAM_BOT_TOKEN`, `OPENROUTER_API_KEY`, `GROQ_API_KEY`, and (optional but recommended) `GOOGLE_SERVICE_ACCOUNT_EMAIL` / `GOOGLE_PRIVATE_KEY` / `GOOGLE_CALENDAR_ID`
 - Telegram webhook pointed at the deployed `telegram-capture` Edge Function
 
-Single-user today — tasks are stored under a fixed UUID. Multi-user would take ~1 hour: add a `telegram_user_id → supabase_user_id` mapping table and parameterize the `USER_ID` constant.
+Single-user today: tasks are stored under a fixed UUID. Multi-user would take ~1 hour: add a `telegram_user_id → supabase_user_id` mapping table and parameterize the `USER_ID` constant.
 
-Doesn't render Telegram's `MarkdownV2` everywhere — uses the classic Markdown parse mode and escapes only the characters that matter. One or two special chars in task titles could render weirdly; a future pass could switch to MarkdownV2 with a stricter escape.
+Doesn't render Telegram's `MarkdownV2` everywhere: uses the classic Markdown parse mode and escapes only the characters that matter. One or two special chars in task titles could render weirdly; a future pass could switch to MarkdownV2 with a stricter escape.
 
 ## Demo Pitch
 
-"I used to avoid my GTD inbox because processing it took an hour and required sitting at my computer. Now I tap through the whole thing from the bus in four minutes. Same method, different interface — and because the bot captures voice notes and auto-creates tasks, the inbox fills itself without me thinking about it."
+"I used to avoid my GTD inbox because processing it took an hour and required sitting at my computer. Now I tap through the whole thing from the bus in four minutes. Same method, different interface, and because the bot captures voice notes and auto-creates tasks, the inbox fills itself without me thinking about it."
