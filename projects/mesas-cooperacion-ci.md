@@ -19,7 +19,7 @@ demo_video: null
 ![hero](../assets/mesas-cooperacion-ci/hero.svg)
 
 ## The Problem
-I'm the consultant behind the technical accompaniment to establish two **Mesas de Cooperantes** (Cooperation Tables) for conservation and sustainable development in the Amazonian provinces of Sucumbíos and Orellana. Contract runs October 2025 – April 2026. The work produces long, dense deliverables in Spanish (.docx reports, roadmaps, governance models, constitutional acts), plus the ongoing coordination of many stakeholders: provincial governments, NGOs, technical secretariats, and management groups.
+I'm the consultant behind the technical accompaniment to establish two **Mesas de Cooperantes** (Cooperation Tables) for conservation and sustainable development in the Amazonian provinces of Sucumbíos and Orellana. Contract runs October 2025 – April 2026. The work produces long, dense deliverables in Spanish (.docx reports, roadmaps, governance models, constitutional acts), plus the ongoing coordination of many stakeholders: provincial governments, NGOs, technical secretariats, and management groups. The provincial governments led the tables; my part was the method, the facilitation and the instruments.
 
 Before Claude Code, I was using AI through chat interfaces: great for brainstorming, bad for real project work. Context was always lost. Every conversation started from zero. Feedback from the client had to be manually translated into edits. Deliverables lived in one place, my AI assistant lived in another, and I was the glue.
 
@@ -37,9 +37,9 @@ The bigger shift is methodological: **my consultancy is now a repository**, not 
 
 ## What Changed Since April 2026
 
-**The monitoring system launched with real members.** It went live at the launch workshop of the Sucumbíos provincial government on 25 April 2026. The public views are read-only and open to anyone: a [landing page with live stats across both provinces](https://89jdvm.github.io/mesa-cooperacion-monitoreo/), plus one panel each for Orellana and Sucumbíos with a scorecard, a filterable activity table and a timeline by sub-table.
+**The monitoring system is built and ready, and not yet deployed with the members.** It was prepared for the launch workshop of the Sucumbíos provincial government on 25 April 2026. The public views are read-only and open to anyone: a [landing page with live stats across both provinces](https://89jdvm.github.io/mesa-cooperacion-monitoreo/), plus one panel each for Orellana and Sucumbíos with a scorecard, a filterable activity table and a timeline by sub-table.
 
-**Each member gets a personal link.** A link with a unique token opens a "Mi trabajo" (my work) tab with the member's agenda, streak, quarterly target and their sub-table's standing. There is no way to pick an identity from the page, so nobody can act as someone else.
+**Each member would get a personal link.** A link with a unique token opens a "Mi trabajo" (my work) tab with the member's agenda, streak, quarterly target and their sub-table's standing. There is no way to pick an identity from the page, so nobody can act as someone else.
 
 **Reports are verified in one click.** Members submit progress through a form. The technical secretariat verifies or rejects each report from its inbox or from Mi trabajo, and rejected reports link straight back to the activity. Reminder and notification emails go out from Google Apps Script.
 
@@ -79,7 +79,7 @@ The project folder functions like a small knowledge base: contract documents, pr
 - Everything is in **Spanish**: deliberate, the client is Ecuadorian.
 - `.docx` editing is fragile: always save-close-reopen between major edit phases, never modify paragraphs containing `<w:drawing>` or `<w:pict>`.
 - After heading changes, the Table of Contents must be manually refreshed in Word (F9 on Windows, manual right-click on Mac).
-- The monitoring system launched with Sucumbíos province first. Orellana runs on the same code with its own data.
+- The monitoring system is built and not yet deployed with the Mesa members. Sucumbíos was wired first; Orellana runs on the same code with its own data.
 - **Client data is confidential.** The project folder itself stays private; only this portfolio doc is public.
 
 ## Demo Pitch
@@ -88,7 +88,7 @@ The project folder functions like a small knowledge base: contract documents, pr
 ## Changelog
 
 ### 2026-09-28
-- Added "What Changed Since April 2026": public launch in Sucumbíos (25 April 2026), personal token links, one-click verification, Apps Script emails, live report tab, tests.
+- Added "What Changed Since April 2026": monitoring system built and ready (not yet deployed), prepared for the Sucumbíos workshop (25 April 2026), personal token links, one-click verification, Apps Script emails, live report tab, tests.
 - Updated stack, effort, and the limitation on rollout.
 
 ### 2026-04-16
