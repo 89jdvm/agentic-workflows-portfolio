@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Cuarentena Kit">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#b45309"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <g transform="translate(850,200)" fill="#ffffff" fill-opacity="0.22"><rect x="20" y="20" width="110" height="110" rx="14"/><rect x="150" y="20" width="110" height="110" rx="14" fill-opacity="0.35"/><rect x="20" y="150" width="110" height="110" rx="14" fill-opacity="0.35"/><rect x="150" y="150" width="110" height="110" rx="14"/></g>
+  <text x="80" y="100" font-family="monospace" font-size="15" fill="#ffffff" fill-opacity="0.72" letter-spacing="2">IN-PROGRESS</text>
+  <text x="80" y="220" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="68" font-weight="800" fill="#ffffff">Cuarentena Kit</text>
+  <text x="80" y="334" font-family="-apple-system, sans-serif" font-size="26" fill="#ffffff" fill-opacity="0.88">A 40-day Spanish-language kit for first-time</text>
+  <text x="80" y="372" font-family="-apple-system, sans-serif" font-size="26" fill="#ffffff" fill-opacity="0.88">Latina mothers going through the cuarentena, the</text>
+  <text x="80" y="410" font-family="-apple-system, sans-serif" font-size="26" fill="#ffffff" fill-opacity="0.88">traditional postpartum rest period. My wife is</text>
+  <text x="80" y="448" font-family="-apple-system, sans-serif" font-size="26" fill="#ffffff" fill-opacity="0.88">the founder and the voice; I built the research…</text>
+  <g transform="translate(80, 540)"><rect width="256" height="38" rx="19" fill="#ffffff" fill-opacity="0.18"/><text x="128.0" y="25" font-family="monospace" font-size="15" fill="#ffffff" text-anchor="middle">digital-products</text></g>
+  <g transform="translate(348, 540)"><rect width="242" height="38" rx="19" fill="#ffffff" fill-opacity="0.18"/><text x="121.0" y="25" font-family="monospace" font-size="15" fill="#ffffff" text-anchor="middle">business-design</text></g>
+  <g transform="translate(602, 540)"><rect width="130" height="38" rx="19" fill="#ffffff" fill-opacity="0.18"/><text x="65.0" y="25" font-family="monospace" font-size="15" fill="#ffffff" text-anchor="middle">spanish</text></g>
+  <g transform="translate(744, 540)"><rect width="242" height="38" rx="19" fill="#ffffff" fill-opacity="0.18"/><text x="121.0" y="25" font-family="monospace" font-size="15" fill="#ffffff" text-anchor="middle">market-research</text></g>
+  <text x="1120" y="600" font-family="monospace" font-size="14" fill="#ffffff" fill-opacity="0.55" text-anchor="end">built with Claude Code</text>
+</svg>

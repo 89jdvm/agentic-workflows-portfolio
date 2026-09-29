@@ -2,11 +2,11 @@
 project: Open Brain
 slug: open-brain
 date_built: 2026-03
-last_updated: 2026-04-19
+last_updated: 2026-09-28
 status: demo-ready
 tags: [second-brain, ai-orchestration, productivity, automation, integration, executive-assistant, calendar-automation, gtd]
-stack: [Supabase, pgvector, Deno, TypeScript, MCP Protocol, OpenRouter, Claude Code, Telegram, Google Calendar]
-effort: ~3 weeks (ongoing)
+stack: [Supabase, pgvector, pg_cron, Deno, TypeScript, MCP Protocol, OpenRouter, Deepgram, Claude Code, Telegram, Google Calendar, Gmail API]
+effort: ~2 months of active building (March to May 2026), maintained since
 hero: ../assets/open-brain/hero.svg
 repo: https://github.com/89jdvm/open-brain
 demo_video: null
@@ -40,6 +40,18 @@ Open Brain is a personal database with AI superpowers that acts like a live-in e
 6. **Search by meaning.** Ask "what did I say about the Ecuador project?" and it finds relevant thoughts even if you never used those exact words.
 7. **Integrates with everything else.** Meeting Notetaker pushes action items as tasks. JobMatch AI funnel commands flow through the same router. Notetaker summaries land in the same memory. One brain for all of it.
 8. **Works with any AI.** Built on the MCP protocol: Claude Code, Claude Desktop, and any future AI tool can plug into the same memory.
+
+## What Changed Since April 2026
+
+**Recurring tasks and habits.** The classifier now spots a repeat rule ("every Monday", "the 15th of each month") and a time hint in a voice note. A recurring task gets a 🔁 marker, its calendar events, and Done / Skip / Stop buttons. `/habit setup` creates a set of recurring tasks and calendar blocks from workout templates.
+
+**It asks what happened after a meeting.** A job runs every 15 minutes, finds calendar events that just ended, and sends a Telegram prompt to capture notes and next steps. A dedup table makes sure each event is asked about once.
+
+**Email capture runs on the server.** Gmail is read through OAuth on a `pg_cron` schedule, so capture works with the laptop closed.
+
+**It connects to my other systems.** An `applied <id>` command sends a job to the [JobMatch AI](jobmatch-ai.md) queue. The same Supabase project hosts the [Wedding Planner](wedding-planner.md) backend. Meeting transcripts from the [Meeting Notetaker](meeting-notetaker.md) switched to Deepgram's multilingual model in May, so calls that move between Spanish and English come out clean.
+
+**Security and reliability.** Row-level security with deny-all rules for anonymous access now covers seven system tables. Scheduled briefings are idempotent per time slot, so a retried job never sends the same briefing twice.
 
 ## Screenshots
 
@@ -106,6 +118,7 @@ The MCP server runs as a Supabase Edge Function exposing `capture_thought`, `sea
 
 ## Changelog
 
+- **2026-09-28: Portfolio refresh.** Documented April to July work: recurring tasks and habits, post-event capture prompts, server-side Gmail capture, JobMatch `applied` command, wedding backend, Deepgram multilingual transcripts, RLS on system tables, per-slot briefing idempotency.
 - **2026-04-19: Executive Assistant upgrade (Phases 1–3 shipped).** Added block-aware briefing schedule with 6 AM morning ping + piggyback pattern, auto-classification via LLM (`gtd_decisions[]` array) at capture time, free-text "Edit in words" flow with 10-minute TTL, Google Calendar auto-scheduling with `on` vs `by` intent semantics, ignore-multi-day-busy-blocks policy, 30-min slot picker across four fixed work blocks, atomic claim RPC for briefing race-safety. ~25 commits across three feature branches fast-forwarded to main; 4 edge functions redeployed. 105/105 Deno tests passing.
 - **2026-04-16: Phase 1 SHIPPED.** New pg_cron schedule (morning ping 06:00, mid-morning 10:30, afternoon 15:00, nightly review 21:00, weekly GTD Fri 16:00), `daily_state` table, English-only prompts, atomic claim for morning-briefing piggyback (Codex-reviewed race fix).
 - **2026-03: Initial build.** Core capture + semantic search + GTD + MCP + scheduled briefings via pg_cron.

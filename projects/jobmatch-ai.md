@@ -2,11 +2,11 @@
 project: JobMatch AI
 slug: jobmatch-ai
 date_built: 2026-02
-last_updated: 2026-04-26
-status: demo-ready
-tags: [job-search, ai-orchestration, document-generation, telegram-bot, automation]
-stack: [Python, SQLite, Anthropic API, Telegram Bot API, Supabase, Google APIs, Playwright, python-docx, pikepdf]
-effort: ~1 month (ongoing)
+last_updated: 2026-09-28
+status: in-progress
+tags: [job-search, ai-orchestration, scraping, local-llm, telegram-bot, automation]
+stack: [Python, SQLite, Ollama, OpenRouter, Anthropic API, Claude Code, Telegram Bot API, Supabase, Google APIs, Playwright, python-docx, pikepdf, Windows Task Scheduler]
+effort: ~7 months (ongoing since February 2026)
 hero: ../assets/jobmatch-ai/hero.svg
 repo: https://github.com/89jdvm/job-search-automation
 demo_video: null
@@ -14,7 +14,7 @@ demo_video: null
 
 # JobMatch AI
 
-> A fully automated job-hunting pipeline that scrapes 25+ boards every morning, scores each role with a bespoke rubric, sends the best matches to your phone, and generates a tailored CV and application package with one Telegram command.
+> A job and consultancy-tender pipeline that reads 43 sources and 104 employer career pages every morning, scores each posting against my record, sends the best 25 to my phone, and prepares a tailored CV on one Telegram command. It has logged over 30,000 postings since August 2026.
 
 ![hero](../assets/jobmatch-ai/hero.svg)
 
@@ -30,12 +30,12 @@ JobMatch AI runs a two-phase automated pipeline: Phase 1 every morning at 5am wi
 
 ### Phase 1: Discovery (runs while I sleep)
 
-1. **Scrape.** 25+ specialized scrapers pull new listings from UN Careers, ReliefWeb, UNDP, ImpactPool, ClimateBASE, Conservation Job Board, DevNetJobs, UNGM procurement, Idealist, GlobeSmart, target org sites (25 dream employers monitored directly), LinkedIn email alerts, and more.
+1. **Scrape.** Scrapers for 43 sources pull new listings: ImpactPool, DevNetJobs, ReliefWeb, ClimateBASE, UNGM and UNDP procurement, UN Talent, DevelopmentAid, PCDN, Conservation Job Board, LinkedIn email alerts and more, plus 104 target employers read from their own career pages.
 2. **Deduplicate.** Cross-source dedup catches the same role posted on multiple boards, so I never see it twice.
 3. **Pre-filter.** Hard rules drop obvious mismatches before the expensive scoring step: wrong seniority, wrong geography, salary floor violations.
-4. **Score.** Two-stage AI: Haiku batches all surviving jobs (0–100 rubric with prompt caching for ~$0.65/month), then Sonnet re-scores the borderline range (45–72) where the rough model's confidence is lowest. Final score = HOT (85+), WARM (60–84), COLD, or SKIP.
+4. **Score.** A 0 to 100 rubric. Deterministic eligibility rules run first; a model then judges fit (see "What Changed Since April 2026" for the provider chain). Final score = HOT (85+), WARM (60–84), COLD, or SKIP. The original design, still in the code for when a key is set, runs Haiku on every job and Sonnet on the borderline 45 to 72 range.
 5. **Route.** Deterministic logic assigns an action plan: `INSPIRA_PDF` (UN jobs), `EMAIL_FULL`, `EMAIL_CV_ONLY`, `PORTAL_UPLOAD`, or `MANUAL_REVIEW`. Zero AI in this step: rules based on org type and application requirements extracted during scoring.
-6. **Notify.** Telegram HOT alert immediately for ≥85 scores. Daily digest at 8am with all WARM jobs, each with deadline countdown and the action plan already decided.
+6. **Notify.** Telegram HOT alert immediately for ≥85 scores. A daily digest of up to 25 postings, each with deadline countdown and the action plan already decided.
 
 ### Phase 2: Application (on-demand, triggered by one Telegram command)
 
@@ -50,6 +50,24 @@ When I type `approve 75831` on my phone:
 7. Creates a GTD next-action task + schedules a 60-minute calendar block automatically, computed from the job's deadline.
 8. Sends me a Telegram confirmation with file paths and the next step.
 
+## What Changed Since April 2026
+
+My laptop died on 21 July 2026 (see [Workspace Recovery Kit](workspace-recovery-kit.md)). The pipeline came back on a Windows machine with no API keys, and it had to keep running every morning while it was rebuilt. The rebuild changed the system more than the first month of building it.
+
+**Scoring moved off the paid API.** A provider chain now tries a local model first (Qwen3-Coder 30B through Ollama, free, on the CPU), then OpenRouter, then Anthropic when a key exists. Batches the local model cannot handle well get read inside a Claude Code session. Of the 24,079 verdicts in the current database, 8,076 came from the local model, 3,512 from OpenRouter, 1,976 from Claude Code sessions, and the rest from rules written in code.
+
+**Hard rules moved into code.** Tested on the full rubric, the local model ranked a job that required recent Philippines experience above the best-matching job in the pipeline, and never applied the geography rule. So the disqualifiers (geography, eligibility, link patterns, seniority) now run as deterministic Python before any model sees the job, and the model is asked only for the judgement part.
+
+**Consultancy tenders sit next to jobs.** UN procurement portals (UNGM and UNDP procurement), DevelopmentAid consulting and others now feed a separate consultancy track, scored for team bids: 60% personal fit is strong when a partner can cover the rest. 3,095 of the stored postings are tenders.
+
+**More sources, read more carefully.** 43 sources in the database (up from 25+), plus 104 target employers read directly from their career pages. ReliefWeb is now read page by page instead of through its RSS feed, which had been missing postings. Thin listings get their full text fetched before the filter judges them, so a short summary no longer buries a good job.
+
+**The morning digest is capped at 25.** A per-job ledger records what was sent, so nothing repeats and postings the server reports as closed do not use up a slot. Duplicates are caught across two URLs for one posting and across two portals for one tender.
+
+**Alerts that can be trusted.** A watchdog runs at 08:00 and alerts if the 05:00 run did not happen. A `doctor` command reports stale queues and dead scrapers. One health alert was rewritten three times: it named working scrapers dead, it named permanently blocked scrapers dead every morning, and it asked for a scorer that had never run to be recalibrated. An alert that is always wrong teaches you to stop reading it.
+
+**Windows scheduling.** Task Scheduler replaced macOS launchd.
+
 ## Screenshots
 
 <!-- broken image dropped at build time (PNG never created): ![Telegram alert](../assets/jobmatch-ai/telegram-alert.png) -->*Daily digest on Telegram: score, org, deadline countdown, action plan, all decided before I see it.*
@@ -59,11 +77,11 @@ When I type `approve 75831` on my phone:
 ## Result
 
 - **Morning review: 5 minutes instead of 3 hours.** I wake up to a curated shortlist with deadlines and action plans already set.
-- **Zero missed listings.** 25+ scrapers run daily. Nothing falls through the cracks.
+- **Wide coverage.** 43 sources and 104 employer pages read every morning; 30,141 postings logged between 11 August and 28 September 2026.
 - **Application prep: ~20 minutes instead of ~2 hours.** One Telegram command starts a pipeline that handles org research, CV writing, keyword optimization, and hallucination checking.
 - **UN Inspira savings: ~2.5 hours per application.** The cheatsheet pre-answers the 30+ form fields that require digging through records.
 - **Full audit trail.** Every job, score, decision, and outcome logged in SQLite. I can see which sources produce results and which waste tokens.
-- **Cost: ~$0.65/month** for scoring ~140 jobs/week (Haiku with prompt caching + Sonnet re-scoring ~15% of jobs).
+- **Scoring cost near zero since August 2026.** Most verdicts come from a local model and code rules. On the original paid path, scoring ~140 jobs a week cost about $0.65 a month.
 
 ## Key Decisions
 
@@ -83,7 +101,7 @@ When I type `approve 75831` on my phone:
 
 ## Under the Hood
 
-**Stack:** Python (50+ tool scripts), SQLite (WAL mode, jobs/scores/cvs/outcomes/pipeline_runs tables), Anthropic API (Haiku 4.5 for scoring/verification, Sonnet 4.6 for CV generation), Telegram Bot API, Supabase (Edge Functions for command queueing, GTD/calendar integration), Google APIs (Gmail OAuth, Sheets), Playwright (JS-rendered job boards), python-docx (DOCX assembly), pikepdf (Inspira offline PDFs), launchd (macOS cron).
+**Stack:** Python (109 tool scripts, 53 test files), SQLite (WAL mode, jobs/scores/cvs/outcomes/pipeline_runs tables), Anthropic API (Haiku 4.5 for scoring/verification, Sonnet 4.6 for CV generation), Telegram Bot API, Supabase (Edge Functions for command queueing, GTD/calendar integration), Google APIs (Gmail OAuth, Sheets), Playwright (JS-rendered job boards), python-docx (DOCX assembly), pikepdf (Inspira offline PDFs), Windows Task Scheduler (launchd on macOS before July 2026), Ollama and OpenRouter as scoring backends.
 
 Architecture follows the WAT pattern (Workflows, Agents, Tools): markdown SOPs in `workflows/` define each process; Python scripts in `tools/` handle all deterministic execution; Claude Code acts as reasoning agent for CV generation and scoring. The pipeline is orchestrated by `run_pipeline.py`; Phase 2 runs per-job on-demand via `notify_telegram.py::handle_command()`.
 
@@ -102,16 +120,21 @@ Source ROI is tracked per scraper: hit rate, skip rate, tokens burned. Dead scra
 
 - Scrapers break when job boards change their HTML. Expect 1–2 needing fixes per month. The source ROI tracker surfaces dead ones quickly.
 - CV generation costs ~$0.10–0.20 per CV (Sonnet). Not free, but far cheaper than the time saved.
-- Pipeline runs locally on the Mac via launchd. Laptop needs to be awake at 5am (or triggered manually later).
+- Pipeline runs locally through Windows Task Scheduler. The machine needs to be awake at 5am; the 08:00 watchdog alerts if the run was missed.
+- The local model runs on the CPU at 1 to 3 output tokens a second, so model scoring is slow and prompts are kept short.
 - Single-user system. The scoring rubric and gap acknowledgment are tuned to one person's career profile.
 - LinkedIn scraper depends on email alert forwarding rather than the API, requires periodic Gmail OAuth refresh.
 - Gmail draft staging and apply_inspira.py Playwright automation require the laptop display to be accessible (not headless-only).
 
 ## Demo Pitch
 
-> "I built an AI that checks 25 job boards every morning before I wake up, scores each role against my actual background using a custom rubric, and sends me the best matches on Telegram with deadlines and action plans already decided. When I see one I like, I type 'approve' and it writes a tailored CV, runs a hallucination check, and for UN jobs generates a pre-filled cheatsheet that turns a 3-hour Inspira form into 20 minutes. What used to take 3 hours a day now takes 5 minutes."
+> "I built an AI that checks 43 job boards and 104 employer sites every morning before I wake up, scores each role against my actual background using a custom rubric, and sends me the best matches on Telegram with deadlines and action plans already decided. When I see one I like, I type 'approve' and it writes a tailored CV, runs a hallucination check, and for UN jobs generates a pre-filled cheatsheet that turns a 3-hour Inspira form into 20 minutes. What used to take 3 hours a day now takes 5 minutes."
 
 ## Changelog
+
+### 2026-09-28
+- Added "What Changed Since April 2026": rebuild on Windows after the July drive failure, local-model scoring chain, rules moved into code, consultancy tenders, 43 sources and 104 target employers, 25-a-night digest, watchdog and doctor.
+- Updated pitch, scale numbers, scoring and cost claims, schedule, status (in-progress).
 
 ### 2026-04-26
 - Full rewrite of portfolio doc to reflect ~1 month of additions

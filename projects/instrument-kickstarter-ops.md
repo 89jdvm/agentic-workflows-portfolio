@@ -2,11 +2,11 @@
 project: Instrument Kickstarter. Project Ops System
 slug: instrument-kickstarter-ops
 date_built: 2026-04
-last_updated: 2026-04-16
+last_updated: 2026-09-28
 status: in-progress
 tags: [project-management, kickstarter, client-work, dashboard, automation, email, ai-orchestration]
-stack: [Claude Code, Python, Gmail API, Google Sheets, Google Drive, Jinja2, HTML dashboards]
-effort: ~2 weeks (ongoing through launch)
+stack: [Claude Code, Python, Gmail API, Google Sheets, Google Drive, Jinja2, HTML dashboards, GitHub Pages]
+effort: ~2 weeks to build, then weekly updates April to July 2026
 hero: ../assets/instrument-kickstarter-ops/hero.svg
 repo: /Users/jdlovesyou/Agentic Workflows/Instrument Project
 demo_video: null
@@ -34,6 +34,12 @@ What the system does:
 6. **Google Drive management** (`gdrive_manager.py`): 8-folder hierarchy (Spec Sheets, Meetings, Contracts, Financial Model, Marketing, Kickstarter, Brand Assets, Operations) with auto-refreshing OAuth. Spec sheets, research reports, and subscriber lists auto-upload to the correct folder.
 7. **Gate logic**: 6 go/no-go gates (G0 Foundation → G6 Launch). Each gate has locked conditions. You can't proceed to video production (G3) without strategy approval (G2). Failures at gates trigger team decisions, not auto-escalation.
 8. **Workflows** as markdown SOPs for the non-obvious operations (KS account setup: Ecuador isn't eligible, so the campaign launches under the Ecuadorian luthier's partner as an individual; prototype measurement checklists; competitor research protocol; email campaign QA).
+
+## What Changed Since April 2026
+
+**The dashboard went live and stayed current.** From week 3 to week 14 (April to July 2026) the dashboard was rebuilt and redeployed to GitHub Pages as the project moved, 26 deploys in all, timed to the weekly Thursday meeting. The week-3 meeting alone shipped seven deliverables.
+
+**A status and payments page for the client.** In July I added a page that shows project status and the payment schedule by milestone in one place, linked from the dashboard banner. When a milestone payment was moved or merged with a later one, the page changed with it, so the founder and I always read the same numbers.
 
 ## Screenshots
 
@@ -71,8 +77,17 @@ WAT framework (Workflows / Agents / Tools). Folder IDs cached in `.env` so every
 ## Limitations & Setup
 - Requires Google OAuth credentials for Gmail, Sheets, and Drive APIs.
 - Kickstarter doesn't expose a real API. The scraper falls back from JSON to HTML when they change the DOM. Rate limiting is manual.
-- The dashboard is client-facing-ready but currently rendered locally; a public-facing version would strip budget and risk details.
+- The dashboard is published on GitHub Pages for the team. Anything that should stay private has to be kept out of the context file before a deploy.
 - Email system doesn't yet handle replies, designed for one-way campaigns + web signup.
 
 ## Demo Pitch
 > "This is what it looks like when you treat a Kickstarter launch like running a small company. One context file holds the truth: meetings, decisions, risks, budget. One command renders a dashboard with gate readiness and critical path. One Google Sheet keeps the whole team aligned. The founder doesn't have to remember; the system does."
+
+## Changelog
+
+### 2026-09-28
+- Added "What Changed Since April 2026": weekly live deploys from week 3 to week 14, the client status and payments page.
+- Updated effort and the dashboard hosting note.
+
+### 2026-04-16
+- Initial portfolio doc

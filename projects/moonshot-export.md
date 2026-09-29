@@ -2,11 +2,11 @@
 project: MOONSHOT. B2B Export Demand Engine
 slug: moonshot-export
 date_built: 2026-02
-last_updated: 2026-04-16
-status: demo-ready
-tags: [b2b, outbound, lead-generation, automation, ai-orchestration, scraping, compliance, dashboard, website, export]
-stack: [Claude Code, Python, React, TypeScript, Vite, Tailwind, Smartlead, Apollo, Hunter, ImportYeti, UK Trade Info, Volza]
-effort: ~2 months (ongoing)
+last_updated: 2026-09-28
+status: in-progress
+tags: [b2b, outbound, lead-generation, automation, finance-ops, scraping, compliance, dashboard, export]
+stack: [Claude Code, Python, React, TypeScript, Vite, Tailwind, Smartlead, Apollo, Hunter, ImportYeti, UK Trade Info, Volza, Cloudflare Pages Functions, Cloudflare D1, Google Sheets API]
+effort: ~7 months (ongoing since February 2026)
 hero: ../assets/moonshot-export/hero.svg
 repo: /Users/jdlovesyou/Agentic Workflows/MOONSHOT Export
 demo_video: null
@@ -14,7 +14,7 @@ demo_video: null
 
 # MOONSHOT: B2B Export Demand Engine
 
-> A production-grade demand generation system for a premium Ecuadorian snack exporter. Pulls buyer intent signals from 50+ news feeds, scrapes 6+ trade data sources across 19 countries, enriches and scores leads against 28 weighted factors, runs multi-language email sequences through Smartlead with GDPR-compliant voice rules, tracks deliverability in a real-time dashboard, and includes a React marketing website. Not a script. A trade operation running on code.
+> A production-grade demand generation system for a premium Ecuadorian snack exporter. Pulls buyer intent signals from 50+ news feeds, scrapes 6+ trade data sources across 19 countries, enriches and scores leads against 28 weighted factors, runs multi-language email sequences through Smartlead with GDPR-compliant voice rules, tracks deliverability in a real-time dashboard, and includes a React marketing website. Since June it also runs the reply-to-deal follow-up, first-party open tracking, and a bookkeeping engine that matches eight months of spending against tax-authority invoices.
 
 ![hero](../assets/moonshot-export/hero.svg)
 
@@ -40,6 +40,24 @@ On top of all that:
 - **Reference library**: compliance-by-country matrix for 11 countries (opt-out vs. opt-in vs. high-risk jurisdictions), GDPR enforcement reality check (7.1B EUR in fines total, zero public cases against small non-EU SMEs, Germany the exception via UWG), send-time + language matrix per country, tariff-advantage playbook quantifying per-container savings ($7k UK, $3.2k Canada), $100M Leads framework, competitor landscape, Australian feasibility screen that refuses the market if MFN duty >15%.
 
 **Master lead database: 850+ companies. Signal database: 14,453 intent signals logged.**
+
+## What Changed Since April 2026
+
+**Latin America joined Europe.** In May the sequencer gained send windows and first-touch times for Mexico, Colombia and Chile, with templates rewritten in my own warm-reply voice. The lead scorer gained Latin American signal weights, and the tariff notes were corrected for Canada's free-trade agreement with Ecuador and Mexico's ALADI (Latin American Integration Association) terms.
+
+**A reply is now the start of a process.** A reply-to-deal cadence engine schedules every follow-up after a buyer answers, and an SLA monitor flags replies that have waited too long. The dashboard reads the same records, so its numbers match the pipeline.
+
+**Every email is checked before it goes.** A pre-send copy linter catches broken merges, such as a greeting that rendered as "I see Saw...". A per-lead sender override lets a second approach come from a different mailbox.
+
+**Subject lines are chosen by rules.** A subject-line engine exports each lead's context, collects candidate subjects, and ranks them by signal, question form, country of origin and length. A deterministic linter blocks spam words, over-length lines and brand-rule breaks. One winner is stored per lead and previewed before sending.
+
+**Opens are tracked on our own domain.** The first email is sent as text plus light HTML with a first-party tracking pixel. A Cloudflare Pages Function serves the pixel and logs the open to a Cloudflare D1 database. A puller brings opens back into the pipeline, filtering bots and duplicates.
+
+**The company's books are reconciled by code.** In September I built a pipeline that matches all spending from January to August 2026 against the electronic invoices registered with the SRI (Ecuador's tax authority). It reads five sources: bank statements, payment orders from the bank portal, SRI invoice exports, my petty-cash sheet and a colleague's cash receipts sent over WhatsApp. It publishes a 483-row ledger to Google Sheets with ten controls and seven audits, and all ten controls passed on 2 September. The rule behind it: the engine proposes, the outside sources decide, and nothing is dropped silently. A value audit re-reads the published Sheet after every publish.
+
+**Container costing reads the published sheet.** A costing tool prices a full container against the pricing framework. Its checker reads the published Sheet, so it catches layout and reading errors as well as wrong numbers.
+
+**One wiki holds the operating memory.** Session handoffs land in an inbox and are filed into wiki pages by topic, including a new Finance section.
 
 ## Screenshots
 
@@ -89,3 +107,12 @@ On top of all that:
 
 ## Demo Pitch
 > "This is what B2B export looks like when you run it like an engineering team. Every country has its own compliance and language rules. Every lead is scored against 28 weighted factors. Every signal from the news gets logged and used to upgrade prospects over time. Email delivery is warmed up for 21 days before the first real send. The website is referenced from every email. The dashboard tells us in real time whether the domain is healthy or getting burned. Most agencies charge 5 to 10 grand a month to do a worse version of this."
+
+## Changelog
+
+### 2026-09-28
+- Added "What Changed Since April 2026": Latin America sequences, reply-to-deal engine, pre-send linter, subject-line engine, first-party open tracking on Cloudflare, spending reconciliation against SRI invoices, container costing, wiki.
+- Updated pitch, stack, effort, status.
+
+### 2026-04-16
+- Initial portfolio doc

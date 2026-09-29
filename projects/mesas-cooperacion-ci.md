@@ -2,11 +2,11 @@
 project: Mesas de Cooperación. Conservación Internacional
 slug: mesas-cooperacion-ci
 date_built: 2026-03
-last_updated: 2026-04-16
+last_updated: 2026-09-28
 status: in-progress
 tags: [client-work, consultancy, ai-orchestration, automation, writing, dashboard]
-stack: [Claude Code, Python, python-docx, HTML dashboards]
-effort: ~1 month of ongoing co-pilot work
+stack: [Claude Code, Python, python-docx, HTML dashboards, Google Apps Script, Google Sheets, Gmail, GitHub Pages]
+effort: ~2 months (March to May 2026)
 hero: ../assets/mesas-cooperacion-ci/hero.svg
 repo: /Users/jdlovesyou/Agentic Workflows/Entregable 5
 demo_video: null
@@ -34,6 +34,16 @@ What this unlocks:
 4. **Follow-ups become automated.** Emails to the Grupo Gestor, reminders to the Secretaría Técnica, status requests to the Procurador Síndico, all templated and driven by the same structured data behind the dashboards.
 
 The bigger shift is methodological: **my consultancy is now a repository**, not a series of chat threads.
+
+## What Changed Since April 2026
+
+**The monitoring system launched with real members.** It went live at the launch workshop of the Sucumbíos provincial government on 25 April 2026. The public views are read-only and open to anyone: a [landing page with live stats across both provinces](https://89jdvm.github.io/mesa-cooperacion-monitoreo/), plus one panel each for Orellana and Sucumbíos with a scorecard, a filterable activity table and a timeline by sub-table.
+
+**Each member gets a personal link.** A link with a unique token opens a "Mi trabajo" (my work) tab with the member's agenda, streak, quarterly target and their sub-table's standing. There is no way to pick an identity from the page, so nobody can act as someone else.
+
+**Reports are verified in one click.** Members submit progress through a form. The technical secretariat verifies or rejects each report from its inbox or from Mi trabajo, and rejected reports link straight back to the activity. Reminder and notification emails go out from Google Apps Script.
+
+**Built to be trusted with public data.** A live "Informe" (report) tab in both dashboards, CSV export, quarterly report pages, a data-sync command, and tests for priority scoring, the member states and the keyword matching that assigns activities to sub-tables. A May pass fixed data errors, Gmail compatibility and failures that had been silent.
 
 ## Screenshots
 
@@ -69,8 +79,17 @@ The project folder functions like a small knowledge base: contract documents, pr
 - Everything is in **Spanish**: deliberate, the client is Ecuadorian.
 - `.docx` editing is fragile: always save-close-reopen between major edit phases, never modify paragraphs containing `<w:drawing>` or `<w:pict>`.
 - After heading changes, the Table of Contents must be manually refreshed in Word (F9 on Windows, manual right-click on Mac).
-- Dashboards and email automation are in progress: not yet end-to-end with the live Mesa members.
+- The monitoring system launched with Sucumbíos province first. Orellana runs on the same code with its own data.
 - **Client data is confidential.** The project folder itself stays private; only this portfolio doc is public.
 
 ## Demo Pitch
 > "I'm a consultant working for Conservation International in the Ecuadorian Amazon. Claude Code replaced my chat-based AI workflow with something that lives inside the project itself: every contract, every deliverable, every comment from the client. It doesn't just help me write; it helps me run the whole engagement. The dashboards and email automation are how I'm turning a report into something the stakeholders can actually *use*."
+
+## Changelog
+
+### 2026-09-28
+- Added "What Changed Since April 2026": public launch in Sucumbíos (25 April 2026), personal token links, one-click verification, Apps Script emails, live report tab, tests.
+- Updated stack, effort, and the limitation on rollout.
+
+### 2026-04-16
+- Initial portfolio doc
