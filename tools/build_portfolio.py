@@ -28,6 +28,7 @@ README = ROOT / "README.md"
 # GitHub Pages home. Jekyll rewrites .md links only in files with front matter,
 # and README.md has none, so the site gets a copy that does.
 SITE_INDEX = ROOT / "index.md"
+REPO_TREE = "https://github.com/89jdvm/agentic-workflows-portfolio/tree/main"
 SITE_FRONT_MATTER = "---\nlayout: default\ntitle: Agentic Workflows Portfolio\n---\n\n"
 START = "<!-- PORTFOLIO:INDEX:START -->"
 END = "<!-- PORTFOLIO:INDEX:END -->"
@@ -162,7 +163,10 @@ def main():
         if not args.check:
             README.write_text(new, encoding="utf-8")
 
-    site = SITE_FRONT_MATTER + new
+    # Jekyll leaves image-wrapped links alone, and folder links have no page on the site.
+    site = re.sub(r"\]\(projects/([\w-]+)\.md\)", r"](projects/\1.html)", new)
+    site = re.sub(r"\]\((projects|assets)/(<slug>/)?\)", lambda m: f"]({REPO_TREE}/{m.group(1)})", site)
+    site = SITE_FRONT_MATTER + site
     if not SITE_INDEX.exists() or SITE_INDEX.read_text(encoding="utf-8") != site:
         stale.append("index.md")
         if not args.check:
