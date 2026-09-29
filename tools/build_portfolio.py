@@ -1,4 +1,4 @@
-"""Rebuild the README index and any missing hero cards from projects/*.md.
+"""Rebuild the README index, the site home page and any missing hero cards from projects/*.md.
 
 Usage:
     python tools/build_portfolio.py            # write README index + missing heroes
@@ -25,6 +25,10 @@ ROOT = Path(__file__).resolve().parent.parent
 PROJECTS = ROOT / "projects"
 ASSETS = ROOT / "assets"
 README = ROOT / "README.md"
+# GitHub Pages home. Jekyll rewrites .md links only in files with front matter,
+# and README.md has none, so the site gets a copy that does.
+SITE_INDEX = ROOT / "index.md"
+SITE_FRONT_MATTER = "---\nlayout: default\ntitle: Agentic Workflows Portfolio\n---\n\n"
 START = "<!-- PORTFOLIO:INDEX:START -->"
 END = "<!-- PORTFOLIO:INDEX:END -->"
 
@@ -157,6 +161,12 @@ def main():
         stale.append("README.md")
         if not args.check:
             README.write_text(new, encoding="utf-8")
+
+    site = SITE_FRONT_MATTER + new
+    if not SITE_INDEX.exists() or SITE_INDEX.read_text(encoding="utf-8") != site:
+        stale.append("index.md")
+        if not args.check:
+            SITE_INDEX.write_text(site, encoding="utf-8")
 
     if args.check:
         if stale:
